@@ -1,6 +1,7 @@
 import requests as rq
 import pandas as pd
 import os
+import time
 
 uf_list = [ 'ac' , 'al' , 'ap' , 'am' , 'ba' , 'ce' , 'df' , 'es' , 'go' , 'ma' , 'mt' , 'ms' , 'mg' , 'pr' , 'pb' , 'pa' , 'pe' , 'pi' , 'rj' , 'rn' , 'rs' , 'ro' , 'rr' , 'se' , 'sc' , 'sp' , 'to', 'zz' ]
 
@@ -19,8 +20,12 @@ def create_csv(UF):
         pd.DataFrame(fetch_data_json(UF)).to_csv(f"{UF}.csv")
 
 def start():
+    print("## Fetching data...")
     for uf in uf_list:
         create_csv(uf)
         check_and_update_data(uf)
+    print("## Done.")
 
-start()
+while(True):
+    start()
+    time.sleep(60)
