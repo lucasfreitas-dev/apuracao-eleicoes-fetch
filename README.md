@@ -6,5 +6,5 @@ O script cria arquivos locais (.csv) por UF acumulando as linhas de resultados p
 
 - git clone https://github.com/lucasfreitas-dev/apuracao-eleicoes-fetch.git
 - cd apuracao-eleicoes-fetch
-- pip3 install -r requiriments.txt
+- pip3 install -r requirements.txt
 - pyhton3 main.py
