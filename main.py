@@ -19,7 +19,8 @@ def create_csv(UF):
         pd.DataFrame(fetch_data_json(UF)).to_csv(f"{UF}.csv")
 
 def start():
-    create_csv("rj")
-    check_and_update_data("rj")
+    for uf in uf_list:
+        create_csv(uf)
+        check_and_update_data(uf)
 
 start()
